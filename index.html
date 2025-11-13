@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Voice Translator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
+  <div class="bg-white/20 backdrop-blur-lg rounded-3xl shadow-xl w-full max-w-lg p-8 text-center text-white animate__animated animate__fadeIn">
+    <h1 class="text-3xl font-bold mb-4">🌍 AI Voice Translator</h1>
+    <p class="mb-6 text-gray-100">Speak or type in <span class="font-semibold">English</span> and translate into your chosen language.</p>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-lg font-medium">🎯 Select Target Language</label>
+      <select id="target_language" class="w-full p-3 rounded-xl text-gray-800 focus:outline-none">
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="es">Spanish</option>
+      </select>
+    </div>
+
+    <div class="my-6">
+      <button id="speechBtn" class="bg-green-500 hover:bg-green-600 transition px-5 py-2 rounded-xl text-white font-semibold shadow-md">
+        🎙 Speak English
+      </button>
+      <p class="my-3 text-gray-200">OR</p>
+      <textarea id="textInput" placeholder="Type something in English..." class="w-full p-3 rounded-xl text-gray-800 focus:outline-none"></textarea>
+      <button id="translateBtn" class="mt-4 bg-blue-500 hover:bg-blue-600 transition px-6 py-2 rounded-xl text-white font-semibold shadow-md">
+        🔄 Translate
+      </button>
+    </div>
+
+    <div id="loader" class="hidden animate__animated animate__pulse animate__infinite text-lg mt-3 text-yellow-300">⏳ Translating...</div>
+
+    <div class="mt-6 text-left bg-white/20 p-4 rounded-xl">
+      <h3 class="font-semibold text-lg mb-2">🗣 Translation Output</h3>
+      <p id="translatedText" class="text-gray-100 min-h-[80px]"></p>
+      <audio id="audioPlayer" controls class="w-full mt-3"></audio>
+    </div>
+
+<!-- 🤖 Floating AI Assistant -->
+<div id="ai-assistant">
+  <div id="chat-toggle">🤖</div>
+  <div id="chat-box" class="hidden">
+    <div id="chat-header">Nova — AI Assistant</div>
+    <div id="chat-window"></div>
+    <div id="chat-controls">
+      <input type="text" id="chatMessage" placeholder="Ask me anything..." />
+      <button id="voiceBtn">🎙</button>
+      <button id="sendChatBtn">➡️</button>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="mt-6 text-xs text-gray-300">
+      © 2025 | Built by <span class="font-semibold">KARKAVE D</span>
+    </footer>
+  </div>
+  
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
